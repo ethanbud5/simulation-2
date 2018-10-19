@@ -29,18 +29,20 @@ class Add3 extends React.Component{
     render(){
         return(
             <div>
-                <div>
+                <div className="add_new_listing_nav">
                     <h3>Add New Listing</h3>
                     <button onClick={()=>{this.props.clearNewHouse();this.props.history.push("/")}}>Cancel</button>
                 </div>
-                <div>
+                <div className="text_inputs_container text_center">
                     <div><strong>Monthly Mortgage Amount</strong></div>
                     <input type="number" value={this.props.mortgage} name="mortgage" onChange={(e)=>this.props.changeHandler(e.target.name,e.target.value)}/>
                     <div><strong>Desired Monthly Rent</strong></div>
                     <input type="number" value={this.props.rent} name="rent" onChange={(e)=>this.props.changeHandler(e.target.name,e.target.value)}/>
                 </div>
-                <Link to="/step2"><button>Previous Step</button></Link>
-                <button onClick={()=>this.addHouse()}>Complete</button>
+                <div className="nav_btn_container_3 add_3_btns">
+                    <Link to="/step2"><button className="nav_btn">Previous Step</button></Link>
+                    <button onClick={()=>this.addHouse()} className="completed_btn">Complete</button>
+                </div>
     
             </div>
         )

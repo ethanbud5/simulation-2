@@ -8,16 +8,18 @@ function Add2(props){
     console.log(props)
     return(
         <div>
-            <div>
+            <div className="add_new_listing_nav">
                 <h3>Add New Listing</h3>
                 <button onClick={()=>{props.clearNewHouse();props.history.push("/")}}>Cancel</button>
             </div>
-            <div>
+            <div className="text_inputs_container text_center">
                 <div><strong>Image URL</strong></div>
-                <input type="text" name="image" value={props.image} onChange={(e)=>props.changeHandler(e.target.name,e.target.value)}/>
+                <input className="image_input" type="text" name="image" value={props.image} onChange={(e)=>props.changeHandler(e.target.name,e.target.value)}/>
             </div>
-            <Link to="/step1"><button>Previous Step</button></Link>
-            <Link to="/step3"><button>Next Step</button></Link>
+            <div className="nav_btn_container_2">
+                <Link to="/step1"><button className="nav_btn">Previous Step</button></Link>
+                <Link to="/step3"><button className="nav_btn">Next Step</button></Link>
+            </div>
 
         </div>
     )

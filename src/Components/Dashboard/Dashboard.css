@@ -47,11 +47,7 @@
     padding: 10px;
 }
 .justify_space_between button{
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
+
     margin-top: 10px;
     width: 190px;
     height: 40px;
