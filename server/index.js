@@ -4,7 +4,7 @@ const {json} = require("body-parser");
 const cors = require("cors");
 const massive = require("massive");
 const axios = require("axios");
-const {getHouses} = require("./controllers/houseCtrl")
+const {getHouses,addHouse,removeHouse} = require("./controllers/houseCtrl")
 
 var app = express();
 
@@ -16,6 +16,8 @@ massive(process.env.CONNECTION_STRING).then(dbInstance=>{
 }).catch(err=>console.log(err));
 
 app.get("/api/houses",getHouses);
+app.post("/api/house",addHouse);
+app.delete("/api/house/:id",removeHouse);
 
 
 var port = process.env.PORT || 3001;

@@ -1,5 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 header{
-    height: 100px;
+    height: 70px;
     width: 100vw;
     background: #519872;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.content_container{
+    margin-right: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.logo_text{
+    margin-left: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    color: white;
 }

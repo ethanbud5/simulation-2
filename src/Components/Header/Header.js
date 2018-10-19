@@ -7,9 +7,11 @@ function Header(props){
     return(
         <div>
             <header>
-                <img src="https://raw.githubusercontent.com/DevMountain/simulation-2/master/assets/houser_logo.png" alt="logo"/>
-                <div className="logo_text">
-                    Houser
+                <div className="content_container">
+                    <img src="https://raw.githubusercontent.com/DevMountain/simulation-2/master/assets/houser_logo.png" alt="logo"/>
+                    <h1 className="logo_text">
+                        Houser
+                    </h1>
                 </div>
             </header>
         </div>

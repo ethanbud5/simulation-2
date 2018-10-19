@@ -1,16 +1,45 @@
 import axios from "axios";
 let initialState = {
-    houses:[]
+    houses:[],
+    
+        title:"",
+        address:"",
+        city:"",
+        state:"",
+        zip:0,
+        image:"",
+        mortgage:0,
+        rent:0
+    
 }
 
 const GET_HOUSES = "GET_HOUSES";
+const CHANGE_HANDLER = "CHANGE_HANDLER";
+const CLEAR_HOUSE_STATE = "CLEAR_HOUSE_STATE";
 
 export function getHouses(){
+    
     return{
         type:GET_HOUSES,
         payload:axios.get("http://localhost:4000/api/houses")
     }
 }
+export function changeHandler(name,value){
+    console.log(initialState)
+    return{
+        type:CHANGE_HANDLER,
+        payload:{
+            name,
+            value
+        }
+    }
+}
+export function clearNewHouse(){
+    return{
+        type:CLEAR_HOUSE_STATE
+    }
+}
+
 
 
 export default function reducer(state=initialState,action){
@@ -35,6 +64,26 @@ export default function reducer(state=initialState,action){
         ...state,
         isLoading: false,
       }
+      case CHANGE_HANDLER:
+    //   let copyOfState = {...state};
+    //   copyOfState =copyOfState.houseToAdd[action.payload.name] = action.payload.value;
+        return{
+            // copyOfState
+            ...state,
+            [action.payload.name]:action.payload.value
+        }
+      case CLEAR_HOUSE_STATE:
+        return{
+            ...state,
+                title:"",
+                address:"",
+                city:"",
+                state:"",
+                zip:0,
+                image:"",
+                mortgage:0,
+                rent:0
+        }
         default:
             return state;
     }
